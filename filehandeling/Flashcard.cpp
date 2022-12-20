@@ -7,7 +7,7 @@
 
 
 
-Flashcard::Flashcard(): {
+Flashcard::Flashcard() {
     Card card;
     card.german = "";
     card.english = "";
