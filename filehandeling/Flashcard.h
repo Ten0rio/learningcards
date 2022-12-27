@@ -6,6 +6,7 @@
 #define LEARNINGCARDS_FLASHCARD_H
 
 #include <stdlib.h>
+#include <utility>
 #include <vector>
 #include <string>
 #include <fstream>
@@ -16,23 +17,27 @@ using namespace std;
 
 class Flashcard {
 
-    //todo:
-    // only save one Flashcard to csv file
-    // void saveFlashcardsToCSV(const std::vector<Flashcard> &flashcards, const std::string &filename);
-
 
 public:
     Flashcard();
 
     Flashcard(const string &english, const string &german);
 
-    string getEngWord();
+    Flashcard(const string &english, const string &german, const int &count);
 
-    string getGerWord();
+    string getEngWord() const;
 
-    void setEngWord();
+    void setEngWord(string english);
 
-    void setGerWord();
+    string getGerWord() const;
+
+    void setGerWord(string german);
+
+    void setNumber(int number);
+
+    int getNumber() const;
+
+    friend std::ostream &operator<<(std::ostream &out, const Flashcard &obj);
 
 
 private:
@@ -40,17 +45,14 @@ private:
     struct Card {
         string english;
         string german;
+        int counter;
+
+
+        Card(string eng, string ger) : english(eng), german(ger), counter(0) {};
+        Card(string eng, string ger, int count) : english(eng), german(ger), counter(count) {};
     };
 
-
-    //TODO:
-    // write to csv
-    // read/load  from csv
-    // delete from csv
-
-
-
-
+    Card card;
 
 };
 

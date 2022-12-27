@@ -3,4 +3,4 @@ project(learningcards)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(learningcards main.cpp filehandeling/Flashcard.cpp filehandeling/Flashcard.h)
+add_executable(learningcards main.cpp filehandeling/Flashcard.cpp filehandeling/Flashcard.h filehandeling/CardCollectoin.cpp filehandeling/CardCollectoin.h)
